@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ /*HEADER*/
+ .header{
+    width: 100%;
+    height: 350px;
+}
+.Main-Nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 45%;
+}
+.Main-Nav ul{
+    list-style-type: none;
+    margin-top: 25px;
+    display: flex;
+    gap: 90px;
+}
+
+
+.Main-Nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.about img{
+    width: 70px;
+    height: 70px;
+}
+.contact img{
+    width: 70px;
+    height: 70px;
+}
+
+.logo {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+.logo img {
+    width: 60px;
+    height: 60px;
+}
+.logo h1 {
+    font-size: 25px;
+    color: black;
+}
