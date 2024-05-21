@@ -3,7 +3,7 @@ from  authenticate.models import User
 # Create your models here.
 
 class Post(models.Model):
-    user = models.ManyToManyField(User,null=True)
+    user = models.ForeignKey(User, null=True)
     image = models.ImageField()
     description = models.TextField(null=True, blank=True)
     latitude = models.CharField(max_length=50, null=True)
@@ -19,8 +19,8 @@ class Post(models.Model):
         verbose_name_plural = 'Posts'
         
 class Commentaire(models.Model):
-    post = models.ManyToManyField(Post, verbose_name=("Son post"),null=True)
-    user = models.ManyToManyField(User,null=True)
+    post = models.ForeignKey(Post, verbose_name=("Son post"),null=True)
+    user = models.ForeignKey(User,null=True)
     createdAt = models.DateField(auto_now=False, auto_now_add=False)
     contenu = models.TextField()
     
