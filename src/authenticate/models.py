@@ -5,3 +5,6 @@ from django.db import models
 
 class User(AbstractUser):
     phone = models.CharField(max_length=13)
+    
+    def __str__(self):
+        return self.username
