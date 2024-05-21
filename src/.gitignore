@@ -1,0 +1,6 @@
+# Dossiers à ignorer
+**__pycache__/
+env/
+
+# Fichiers
+db.sqlite3
