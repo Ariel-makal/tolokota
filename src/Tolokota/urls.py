@@ -22,5 +22,6 @@ from authenticate.views import login_page
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', login_page, name='login'),
-    path('api/', include('api.urls'))
+    path('api/', include('api.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 ]
