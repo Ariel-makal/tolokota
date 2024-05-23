@@ -24,7 +24,7 @@ class Post(models.Model):
     zone = models.ForeignKey( Zone,on_delete=models.CASCADE,null=True)
 
     def __str__(self):
-        self.user
+        return self.description
 
     class Meta:
         verbose_name = 'Post'
@@ -37,7 +37,7 @@ class Commentaire(models.Model):
     contenu = models.TextField()
     
     def __str__(self):
-        pass
+        return self.contenu
 
     class Meta:
         verbose_name = 'Commentaire'
