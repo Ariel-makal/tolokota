@@ -1,0 +1,101 @@
+:root{
+    --theme-primary : 118, 241, 46 ;
+    --bs-primary : #3F7E1B;
+}
+.text-primary{
+    color : rgb(var(--theme-primary)) !important;
+}
+.btn-primary{
+    background-color: rgb(var(--theme-primary)) !important;
+    border-color: rgb(var(--theme-primary)) !important;
+}
+
+
+
+.button{
+    margin-right: 10px;
+    margin-top: 10px;
+    background-color: rgb(var(--theme-primary));
+    border-color: rgb(var(--theme-primary));
+}
+
+.button:hover{
+    transition: 0.5s;
+    background-color: white ;
+}
+#inscription{
+    color : rgb(var(--theme-primary))
+}
+.position-relative .mx-auto label{
+    margin-top: 10px;
+}
+
+ .py-5{
+    justify-content: center;
+}
+.inscription_form{
+    
+    justify-content: center;
+    align-items: center;  
+    border-color: rgb(var(--theme-primary));
+    height: max-content;    
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 15%;
+}
+
+.inscription_form h1{
+    text-align: center;
+}
+
+.btn_inscrip{
+    background-color: rgb(var(--theme-primary));
+    border-color: rgb(var(--theme-primary)) ;
+}
+.btn_inscrip:hover {
+    transition: 0.5s;
+    background-color : white;
+}
+
+.formulaire{
+    height: 400px;
+}
+
+.button_submit{
+    margin-left: 25%;
+    margin-bottom: 10px;
+    background-color: rgb(var(--theme-primary));
+}
+.button_submit:hover{
+    background-color: white;
+}
+.footer-item{
+    width: 100%;
+}
+.g-5{
+    width: 100%;
+}
+
+.py-5{
+    width: 100%;
+}
+
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+    }
+
+    @keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 80%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.skeleton-img{
+    display: block!important;
+    height: 300px!important;
+    width: 300px!important;
+}
