@@ -1,7 +1,7 @@
 from rest_framework import generics
-
+from authenticate.models import User
 from blog.models import Post,Commentaire,Zone
-from .serializers import PostSerializer,CommentaireSerializer,ZoneSerializer
+from .serializers import PostSerializer,CommentaireSerializer,ZoneSerializer,UserSerializer
 
 # Create your views here.
 
@@ -29,3 +29,11 @@ class ZoneList(generics.ListCreateAPIView):
 class ZoneDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Zone.objects.all()
     serializer_class = ZoneSerializer
+
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
