@@ -1,5 +1,5 @@
 :root{
-    --theme-primary : 118, 241, 46 ;
+    --theme-primary : 63, 126, 27 ;
     --bs-primary : #3F7E1B;
 }
 .text-primary{
@@ -87,10 +87,10 @@
 
     @keyframes skeleton-loading {
     0% {
-        background-color: hsl(200, 20%, 80%);
+        background-color: hsl(0, 0%, 82%);
     }
     100% {
-        background-color: hsl(200, 20%, 95%);
+        background-color: hsl(0, 0%, 96%);
     }
 }
 

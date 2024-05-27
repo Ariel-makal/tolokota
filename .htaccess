@@ -1,3 +1,0 @@
-RewriteEngine On
-RewriteRules ^\/$ index.html [L]
-RewriteRules ^/about(\.html)?$ html/about.html [L]
