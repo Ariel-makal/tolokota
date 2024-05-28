@@ -354,7 +354,7 @@
                 headers.append('Content-Type', 'application/ld+json');
                 headers.append('Accept', 'application/ld+json');
 
-                fetch("http://localhost:8000/api/posts",{
+                fetch(BASE_URL+"/api/posts",{
                     method: "post",
                     headers:headers,
                     body: JSON.stringify(body)
@@ -368,7 +368,7 @@
             })
 
             async function upload(file){
-                const response = await fetch("http://localhost:8000/file/upload",{
+                const response = await fetch(BASE_URL+"/file/upload",{
                     method: "POST",
                     body: JSON.stringify(
                         {'file': await getBase64(file)}
@@ -401,7 +401,7 @@
                     'password': password
                 }
 
-                fetch("http://localhost:8000/login",{
+                fetch(BASE_URL+"/login",{
                     method: "post",
                     body: JSON.stringify(body)
                 })

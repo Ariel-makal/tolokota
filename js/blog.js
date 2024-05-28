@@ -1,11 +1,13 @@
 
+const BASE_URL = "https://26c8-196-250-96-92.ngrok-free.app";
 // GET POST
 $.ajax({
 
-    url: "http://localhost:8000/api/posts?order[createdAt]=desc",
+    url: BASE_URL+"/api/posts?order[createdAt]=desc",
     type: "get",
     headers: {
-        "accept": "application/json"
+        "accept": "application/json",
+        "ngrok-skip-browser-warning": "69420"
     },
     success: function (res) {
         console.log(res)
@@ -34,7 +36,7 @@ function feedTemplate(_post) {
                         <span class="ms-3">@${_post.owner.pseudo}</span>
                     </div>
                     <div>
-                       <span style="font-size: 9pt">Depuis 
+                       <span style="font-size: 9pt">Il y a  
                     `;
                         if(moment().diff(moment(_post.createdAt), 'years') > 0) {
                             html += `${moment().diff(moment(_post.createdAt), 'years')} ans`

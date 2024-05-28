@@ -235,6 +235,7 @@
 
 <script>
 
+    const BASE_URL = "https://26c8-196-250-96-92.ngrok-free.app";
     getLocation()
 
     function getLocation() {
@@ -257,10 +258,11 @@
 
     $.ajax({
 
-        url: "http://localhost:8000/api/post/all?order[createdAt]=desc",
+        url: BASE_URL+"/api/post/all?order[createdAt]=desc",
         type: "get",
         headers: {
-            "accept": "application/json"
+            "accept": "application/json",
+            "ngrok-skip-browser-warning": "69420"
         },
         success: function (res) {
             console.log(res)
