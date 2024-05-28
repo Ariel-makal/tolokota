@@ -1,0 +1,9 @@
+App\Entity\Post:
+  post_{1..200}:
+    owner: '@user_*'
+    image: <imageUrl('320', '200', 'trash')>
+    longitude: <longitude()>
+    latitude: <latitude()>
+    description: <text()>
+    createdAt: <datetime()>
+

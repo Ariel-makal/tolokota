@@ -1,0 +1,8 @@
+App\Entity\User:
+  user_{1..20}:
+    email: <email()>
+    password: <encodePassword('12345')>
+    nom: <name()>
+    pseudo: <username()>
+    phone: <e164PhoneNumber()>
+    createdAt: <datetime()>

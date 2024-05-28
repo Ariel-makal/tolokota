@@ -1,0 +1,6 @@
+App\Entity\Comment:
+  comment_{1..500}:
+    owner: '@user_*'
+    content: <text()>
+    createdAt: <datetime()>
+    post: '@post_*'
