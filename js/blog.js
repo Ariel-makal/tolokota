@@ -1,3 +1,5 @@
+
+// GET POST
 $.ajax({
 
     url: "http://localhost:8000/api/posts?order[createdAt]=desc",
@@ -13,7 +15,6 @@ $.ajax({
         });
 
         $('#section-feeds').html(feeds);
-        console.log("fin")
     },
     error: function (error) {
         console.log(error)
@@ -21,7 +22,7 @@ $.ajax({
 
 });
 
-
+//POST TEMPLATE
 function feedTemplate(_post) {
     let html = ` 
     <div class="row p-3">
@@ -80,7 +81,10 @@ function feedTemplate(_post) {
 return html;
 }
 
+//HTML GEO LOC.
 const x = document.getElementById("demo");
+
+// FUNCTION LOC.
 getLocation()
 
 function getLocation() {
@@ -92,7 +96,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    $('input[name="latitude"]').val(position.coords.latitude)
-    $('input[name="longitude"]').val(position.coords.longitude)
+    $('input[name="latitude"]').val(position.coords.latitude) // PASS COORD. IN FIELD LAT
+    $('input[name="longitude"]').val(position.coords.longitude) //PASs coord. in field long.
     x.innerHTML = position.coords.latitude + " , " + position.coords.longitude;
 }

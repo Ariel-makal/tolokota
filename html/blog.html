@@ -28,6 +28,10 @@
         <!-- Template Stylesheet -->
         <link href="../css/style.css" rel="stylesheet">
         <link href="../css/custom.css" rel="stylesheet">
+
+        <script>
+
+        </script>
     </head>
 
     <body>
@@ -73,6 +77,8 @@
                             <a href="../index.html" class="nav-item nav-link">Accueil</a>
                             <a href="../index.html#about" class="nav-item nav-link">A propos</a>
                             <a href="#" class="nav-item nav-link active">Blog</a>
+                            <a href="maps.html" class="nav-item nav-link">Maps</a>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -94,9 +100,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 py-3 border-top">
-                    <a class="btn btn-info text-white text-start mb-3 w-100" style="border-radius: 15px">
+                    <a class="text-center d-none mb-3 w-100 user-connected" style="border-radius: 15px">
+                    </a>
+                    <a class="btn btn-info text-white text-start mb-3 w-100" id="btn-connexion" style="border-radius: 15px" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="fa fa-user mx-2"></i>
-                        <span>Se connecter</span>
+                        <span class="">Se connecter</span>
                     </a>
                     <a class="mb-3 btn btn-outline-light text-start w-100 text-dark border-0" style="border-radius: 15px">
                         <i class="fa fa-trash mx-2"></i>
@@ -106,11 +114,36 @@
                         <i class="fa fa-newspaper mx-2"></i>
                         <span>Nouvelles</span>
                     </a>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <h3 class="text-center">Connexion</h3>
+                                    <form class="px-5" method="post" id="login">
+                                        <p id="error-mgs" class="text-danger text-center"></p>
+                                        <label>Pseudo</label>
+                                        <input class="form-control" name="pseudo" type="text">
+                                        <br>
+                                        <label>Mots de passe</label>
+                                        <input class="form-control" name="password" type="password">
+
+                                        <div class="modal-footer d-flex justify-content-center">
+                                            <button type="button" class="btn btn-dark" data-dismiss="modal">Annuler</button>
+                                            <button type="submit" class="btn btn-outline-success">Se connecter</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="col-lg-6 min-vh-100 border border-bottom-0 border-light">
                     <div class="row">
-                        <form method="post" class="col-lg-12 py-3 mb-4" style="background: whitesmoke">
+                        <form id="post" method="post" class="col-lg-12 py-3 mb-4" style="background: whitesmoke">
                             <div class="d-flex">
                                 <input type="text" name="description" class="form-control border-0 bg-transparent" placeholder="Je signal un coin sale...">
                             </div>
@@ -150,18 +183,6 @@
                                 </div>
                             </div>
                             <hr class="mx-3 border-bottom">
-                            <div class="row px-3">
-                                <div class="col-10">
-                                    <p class="skeleton py-2 w-75"></p>
-                                </div>
-                                <div class="col-12 ">
-                                    <img class="skeleton" src=" " alt="" style="width:320px; height:200px;">
-                                </div>
-                                <div class="col-11">
-                                    <p class="py-2 skeleton w-100 mb-3 mt-2"></p>
-                                    <p class="py-2 skeleton w-100"></p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -306,16 +327,21 @@
         <script src="../js/main.js"></script>
         <script src="../js/blog.js"></script>
         <script>
-            $('form').on('submit',async function (event) {
-                event.preventDefault();
+            $('#post').on('submit',async function (event) {
+                event.preventDefault(); // stop l'action du submit a ce niveau
 
                 let longitude = $('input[name="longitude"]').val()
                 let latitude = $('input[name="latitude"]').val()
                 let file = document.querySelector('input[name="image"]').files[0]
                 let description = $('input[name="description"]').val()
 
+                if(window.sessionStorage.getItem('user') === null){
+                    $('#exampleModal').modal('show');
+                    return false;
+                }
+
                 var body = {
-                    'owner': '/api/users/20',
+                    'owner': '/api/users/'+ window.sessionStorage.getItem('user'),
                     'latitude': latitude,
                     'longitude': longitude,
                     'description': description,
@@ -335,10 +361,9 @@
                 }).then((response)=>{
                     return response.json()
                 }).then((result)=>{
+                    window.location.reload();
                     console.log(result)
                 })
-
-                console.log()
 
             })
 
@@ -363,7 +388,47 @@
             async function getBase64(file) {
                 return toBase64(file)
             }
+        </script>
+        <script>
+            $('#login').on('submit',function (event) {
+                event.preventDefault();
 
+                let pseudo = $('input[name="pseudo"]').val()
+                let password = $('input[name="password"]').val()
+
+                let body= {
+                    'pseudo': pseudo,
+                    'password': password
+                }
+
+                fetch("http://localhost:8000/login",{
+                    method: "post",
+                    body: JSON.stringify(body)
+                })
+                .then((response)=>{
+                   return response.json()
+                })
+                .then((result)=>{
+                    $('#error-mgs').html(result.message)
+                    if(result.status) {
+                        window.sessionStorage.setItem('user',result.user['id'])// met l'id de l' utilisateur ne session
+                        window.sessionStorage.setItem('user_name',result.user['name'])// met l'id de l' utilisateur ne session
+                        window.sessionStorage.setItem('user_pseudo',result.user['pseudo'])// met l'id de l' utilisateur ne session
+                        window.location.reload();
+                    }
+                    console.log(result)
+                })
+
+                return false;
+            })
+        </script>
+
+        <script>
+            if(window.sessionStorage.getItem('user')){
+                $('#btn-connexion').hide();
+                $('.user-connected').html(window.sessionStorage.getItem('user_name'));
+                $('.user-connected').show();
+            }
         </script>
     </body>
 
