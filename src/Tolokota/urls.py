@@ -18,10 +18,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from authenticate.views import login_page
+from blog.views import *
 
-urlpatterns = [
+urlpatterns = [ 
     path("admin/", admin.site.urls),
-    path('', login_page, name='login'),
+    #path('', login_page, name='login'),
     path('api/', include('api.urls')),
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
+    path('email/', include('sendemail.urls')),
+    path("blog/", include('blog.urls')),
+       
 ]

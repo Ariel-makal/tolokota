@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,17 +26,17 @@ SECRET_KEY = "django-insecure-auj$77*8c!!lbo8@deq&jq4oyr%gqk95^gb_%*(b4i=9@9@(cz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-CORS_ALLOW_ALL_ORIGINS = True
+#ALLOWED_HOSTS = ["*"]
+#CORS_ALLOW_ALL_ORIGINS = True
 """CORS_ALLOWED_ORIGINS = [
     "https://example.com",
     "https://sub.example.com",
     "http://localhost:8080",
     "http://127.0.0.1:5500",
 ]"""
-CORS_ALLOW_HEADERS = [
+"""CORS_ALLOW_HEADERS = [
     "ngrok-skip-browser-warning"
-]
+]"""
 
 # Application definition
 
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
     "authenticate.apps.AuthenticateConfig",
     "blog.apps.BlogConfig",
     "api.apps.ApiConfig",
+    "sendemail",
 ]
 
 REST_FRAMEWORK = {
@@ -142,6 +144,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 MEDIA_ROOT = "media/"
 
 # Default primary key field type
@@ -149,3 +154,11 @@ MEDIA_ROOT = "media/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "authenticate.User"
+
+
+#serveur de test d'envois demail django : 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT= '587'
+EMAIL_HOST_USER = 'makalyav6@gmail.com'
+EMAIL_HOST_PASSWORD= 'dpowdgyqbljoafof'
+EMAIL_USE_TLS = True
