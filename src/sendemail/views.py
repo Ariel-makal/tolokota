@@ -8,8 +8,6 @@ def contact_view(request):
         # Récupération des données du formulaire
         name = request.POST.get('name')
         email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        website = request.POST.get('website')
         message = request.POST.get('message')
 
         # Construire le sujet et le corps de l'e-mail
@@ -18,8 +16,6 @@ def contact_view(request):
         body = f"""
         Nom: {name}
         Email: {email}
-        Téléphone: {phone}
-        Site Web: {website}
         Message:
         {message}
         """

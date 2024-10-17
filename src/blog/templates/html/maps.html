@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
-    <title>Environs - Environmental </title>
+    <link rel="icon" href="{% static 'img/sauver-la-nature.png' %}" type="image/x-icon">
+    <title>TOLOKOTA - MAPS </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -18,18 +20,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="../node_modules/leaflet/dist/leaflet.css" rel="stylesheet">
+        <link href="{% static "lib/owlcarousel/assets/owl.carousel.min.css" %}" rel="stylesheet">
+        <link href="{% static "lib/lightbox/css/lightbox.min.css" %}" rel="stylesheet">
 
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/custom.css" rel="stylesheet">
-
+        <!-- Template Stylesheet -->
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+        <link href="{% static "css/custom.css" %}" rel="stylesheet">
 </head>
 
 <body>
@@ -85,7 +85,7 @@
 
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb" style="
-            background-image: url('../img/img7.avif');
+            background-image: url('../../static/img/img7.avif');
             background-size: cover;
             background-position: bottom;
         ">
@@ -103,99 +103,99 @@
 
         <div class="col-lg-9 vh-100 border border-bottom-0 border-light">
             <div id="map" class="w-100 h-100">
-
             </div>
         </div>
     </div>
-
-
 </div>
 
 <!-- Footer Start -->
-<div class="container-fluid footer bg-dark text-body py-5">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item">
-                    <h4 class="mb-4 text-white">Newsletter</h4>
-                    <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
-                    <div class="position-relative mx-auto">
-                        <input class="form-control border-0 bg-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email" style="box-shadow: none">
-                        <button type="button" class="btn-hover-bg btn btn-primary position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+        <div class="container-fluid footer bg-dark text-body py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white">Newsletter</h4>
+                            <p class="mb-4">Dolor amet sit justo amet elitr clita ipsum elitr est.Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit.</p>
+                            <div class="position-relative mx-auto">
+                                <input class="form-control border-0 bg-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email" style="box-shadow: none">
+                                <button type="button" class="btn-hover-bg btn btn-primary position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Our Services</h4>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Ocean Turtle</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> White Tiger</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Social Ecology</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Loneliness</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Beauty of Life</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Present for You</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item d-flex flex-column">
-                    <h4 class="mb-4 text-white">Volunteer</h4>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Karen Dawson</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Jack Simmons</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Michael Linden</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Simon Green</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Natalie Channing</a>
-                    <a href=""><i class="fas fa-angle-right me-2"></i> Caroline Gerwig</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
-                <div class="footer-item">
-                    <h4 class="mb-4 text-white">Our Gallery</h4>
-                    <div class="row g-2">
-                        <div class="col-4">
-                            <div class="footer-gallery">
-                                <img src="img/gallery-footer-1.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-1.jpg" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
-                                </div>
-                            </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Our Services</h4>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Ocean Turtle</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> White Tiger</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Social Ecology</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Loneliness</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Beauty of Life</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Present for You</a>
                         </div>
-                        <div class="col-4">
-                            <div class="footer-gallery">
-                                <img src="img/gallery-footer-2.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-2.jpg" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Volunteer</h4>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Karen Dawson</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Jack Simmons</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Michael Linden</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Simon Green</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Natalie Channing</a>
+                            <a href=""><i class="fas fa-angle-right me-2"></i> Caroline Gerwig</a>
                         </div>
-                        <div class="col-4">
-                            <div class="footer-gallery">
-                                <img src="img/gallery-footer-3.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-3.jpg" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="mb-4 text-white">Our Gallery</h4>
+                            <div class="row g-2">
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="{% static "img/gallery-footer-1.jpg" %}" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="{% static "img/gallery-footer-1.jpg" %}" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="footer-gallery">
-                                <img src="img/gallery-footer-4.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-4.jpg" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="{% static "img/gallery-footer-2.jpg" %}" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="{% static "img/gallery-footer-2.jpg" %}" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="footer-gallery">
-                                <img src="img/gallery-footer-5.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-5.jpg" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="{% static "img/gallery-footer-3.jpg" %}" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="{% static "img/gallery-footer-3.jpg" %}" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="footer-gallery">
-                                <img src="img/gallery-footer-6.jpg" class="img-fluid w-100" alt="">
-                                <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-6.jpg" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="{% static "img/gallery-footer-4.jpg" %}" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="{% static "img/gallery-footer-4.jpg" %}" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="{% static "img/gallery-footer-5.jpg" %}" class="img-fluid w-100" alt="">
+                                        <div class="footer-search-icon">
+                                            <a href="{% static "img/gallery-footer-5.jpg" %}" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="footer-gallery">
+                                        <img src="{% static "img/gallery-footer-6.jpg" %}" class="img-fluid w-100" alt="">
+
+                                        <div class="footer-search-icon">
+                                            <a href="{% static "img/gallery-footer-6.jpg" %}" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -203,16 +203,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
 <!-- Footer End -->
-
-
-
-
-
-
-
 
 <!-- Back to Top -->
 <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
@@ -221,17 +212,17 @@
 <!-- JavaScript Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../lib/easing/easing.min.js"></script>
-<script src="../lib/waypoints/waypoints.min.js"></script>
-<script src="../lib/counterup/counterup.min.js"></script>
-<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="../lib/lightbox/js/lightbox.min.js"></script>
-<script src="../node_modules/moment/min/moment.min.js"></script>
-<script src="../node_modules/leaflet/dist/leaflet.js"></script>
+<script src="{% static "lib/easing/easing.min.js" %}"></script>
+<script src="{% static "lib/waypoints/waypoints.min.js" %}"></script>
+<script src="{% static "lib/counterup/counterup.min.js" %}"></script>
+<script src="{% static "lib/owlcarousel/owl.carousel.min.js" %}"></script>
+<script src="{% static "lib/lightbox/js/lightbox.min.js" %}"></script>
+<script src="{% static "node_modules/moment/min/moment.min.js" %}"></script>
+<script src="{% static "node_modules/leaflet/dist/leaflet.js" %}"></script>
 
 
 <!-- Template Javascript -->
-<script src="../js/main.js"></script>
+<script src="{% static "js/main.js" %}"></script>
 
 <script>
 

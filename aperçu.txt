@@ -1,0 +1,7 @@
+Je dois gérer l'inscription et la connexion des utilisateurs du site, connecter le formulaire du site à ma base de données avec django
+ ainsi tout utilisateur qui souhaiterait publier devra tout d'abords se connecter.
+
+Après ça je dois ensuite gérer le poste des utilisateurs mais la partie javaScript coder par Daniel va me poser des difficultés ... je ferai
+mieux de lui mettre au nouvelle de mes avancées.
+
+Et enfin gerer la map et la géolocalisation de différents points de signalements.

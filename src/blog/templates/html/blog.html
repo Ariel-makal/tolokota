@@ -4,6 +4,7 @@
     <head>
         {% load static %}
         <meta charset="utf-8">
+        <link rel="icon" href="{% static 'img/sauver-la-nature.png' %}" type="image/x-icon">
         <title>TOLOKOTA - BLOG</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
@@ -67,18 +68,18 @@
                     </div>
                 </div>
                 <nav class="navbar navbar-light bg-light navbar-expand-xl">
-                    <a href="../index.html" class="navbar-brand ms-3">
-                        <h1 class="text-primary display-5"><img src="../img/TOLOKOTA.png" width="200"></h1>
+                    <a href="{% url "home" %}" class="navbar-brand ms-3">
+                        <h1 class="text-primary display-5"><img src="{% static "img/TOLOKOTA.png" %}" width="200"></h1>
                     </a>
                     <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
                         <div class="navbar-nav ms-auto">
-                            <a href="../index.html" class="nav-item nav-link">Accueil</a>
-                            <a href="../index.html#about" class="nav-item nav-link">A propos</a>
+                            <a href="{% url "home" %}" class="nav-item nav-link">Accueil</a>
+                            <a href="{% url "about" %}" class="nav-item nav-link">A propos</a>
                             <a href="#" class="nav-item nav-link active">Blog</a>
-                            <a href="maps.html" class="nav-item nav-link">Maps</a>
+                            <a href="{% url "maps" %}" class="nav-item nav-link">Maps</a>
                         </div>
                     </div>
                 </nav>
@@ -88,7 +89,7 @@
 
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb" style="
-            background-image: url('../img/img7.avif');
+            background-image: url('../../static/img/img7.avif');
             background-size: cover;
             background-position: bottom;
         ">
@@ -248,49 +249,49 @@
                             <div class="row g-2">
                                 <div class="col-4">
                                     <div class="footer-gallery">
-                                        <img src="img/gallery-footer-1.jpg" class="img-fluid w-100" alt="">
+                                        <img src="{% static "img/gallery-footer-1.jpg" %}" class="img-fluid w-100" alt="">
                                         <div class="footer-search-icon">
-                                            <a href="img/gallery-footer-1.jpg" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                            <a href="{% static "img/gallery-footer-1.jpg" %}" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                         </div>
                                     </div>
                                </div>
                                <div class="col-4">
                                     <div class="footer-gallery">
-                                        <img src="img/gallery-footer-2.jpg" class="img-fluid w-100" alt="">
+                                        <img src="{% static "img/gallery-footer-2.jpg" %}" class="img-fluid w-100" alt="">
                                         <div class="footer-search-icon">
-                                            <a href="img/gallery-footer-2.jpg" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                            <a href="{% static "img/gallery-footer-2.jpg" %}" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                         </div>
                                     </div>
                                </div>
                                 <div class="col-4">
                                     <div class="footer-gallery">
-                                        <img src="img/gallery-footer-3.jpg" class="img-fluid w-100" alt="">
+                                        <img src="{% static "img/gallery-footer-3.jpg" %}" class="img-fluid w-100" alt="">
                                         <div class="footer-search-icon">
-                                            <a href="img/gallery-footer-3.jpg" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                            <a href="{% static "img/gallery-footer-3.jpg" %}" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                         </div>
                                     </div>
                                </div>
                                 <div class="col-4">
                                     <div class="footer-gallery">
-                                        <img src="img/gallery-footer-4.jpg" class="img-fluid w-100" alt="">
+                                        <img src="{% static "img/gallery-footer-4.jpg" %}" class="img-fluid w-100" alt="">
                                         <div class="footer-search-icon">
-                                            <a href="img/gallery-footer-4.jpg" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                            <a href="{% static "img/gallery-footer-4.jpg" %}" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                         </div>
                                     </div>
                                </div>
                                 <div class="col-4">
                                     <div class="footer-gallery">
-                                        <img src="img/gallery-footer-5.jpg" class="img-fluid w-100" alt="">
+                                        <img src="{% static "img/gallery-footer-5.jpg" %}" class="img-fluid w-100" alt="">
                                         <div class="footer-search-icon">
-                                            <a href="img/gallery-footer-5.jpg" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                            <a href="{% static "img/gallery-footer-5.jpg" %}" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                         </div>
                                     </div>
                                </div>
                                <div class="col-4">
 									<div class="footer-gallery">
-										<img src="img/gallery-footer-6.jpg" class="img-fluid w-100" alt="">
+										<img src="{% static "img/gallery-footer-6.jpg" %}" class="img-fluid w-100" alt="">
                                         <div class="footer-search-icon">
-                                            <a href="img/gallery-footer-6.jpg" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                            <a href="{% static "img/gallery-footer-6.jpg" %}" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                         </div>
 									</div>
 								</div>
