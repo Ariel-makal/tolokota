@@ -4,7 +4,8 @@
     <head>
         {% load static %}
         <meta charset="utf-8">
-        <title>TOLOKOTA - BLOG</title>
+        <title>tolokota</title>
+        <link rel="icon" href="{% static 'img/sauver-la-nature.png' %}" type="image/x-icon">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -51,8 +52,8 @@
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-8">
                             <div class="topbar-info d-flex flex-wrap">
-                                <a href="#" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>Example@gmail.com</a>
-                                <a href="#" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>+01234567890</a>
+                                <a href="{% url "contact" %}" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>ToLokota.ac.cd</a>
+                                <a href="{% url "contact" %}" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>+01234567890</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -68,17 +69,17 @@
                 </div>
                 <nav class="navbar navbar-light bg-light navbar-expand-xl">
                     <a href="../index.html" class="navbar-brand ms-3">
-                        <h1 class="text-primary display-5"><img src="../img/TOLOKOTA.png" width="200"></h1>
+                        <h1 class="text-primary display-5"><img src="{% static '/img/TOLOKOTA.png' %}" width="200"></h1>
                     </a>
                     <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
                         <div class="navbar-nav ms-auto">
-                            <a href="../index.html" class="nav-item nav-link">Accueil</a>
-                            <a href="../index.html#about" class="nav-item nav-link">A propos</a>
-                            <a href="#" class="nav-item nav-link active">Blog</a>
-                            <a href="maps.html" class="nav-item nav-link">Maps</a>
+                            <a href="{% url "home" %}" class="nav-item nav-link">Accueil</a>
+                            <a href="{% url "about" %}" class="nav-item nav-link">A propos</a>
+                            <a href="" class="nav-item nav-link active">Blog</a>
+                            <a href="{% url "maps" %}" class="nav-item nav-link">Maps</a>
                         </div>
                     </div>
                 </nav>
@@ -88,7 +89,7 @@
 
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb" style="
-            background-image: url('../img/img7.avif');
+            background-image: url('../../static/img/img7.avif');
             background-size: cover;
             background-position: bottom;
         ">

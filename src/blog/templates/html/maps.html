@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
-    <title>Environs - Environmental </title>
+    <title>tolokota</title>
+    <link rel="icon" href="{% static 'img/sauver-la-nature.png' %}" type="image/x-icon">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -18,17 +20,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="../node_modules/leaflet/dist/leaflet.css" rel="stylesheet">
+    <link href="{% static "lib/owlcarousel/assets/owl.carousel.min.css" %}" rel="stylesheet">
+    <link href="{% static "lib/lightbox/css/lightbox.min.css" %}" rel="stylesheet">
 
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/custom.css" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
+    <link href="{% static "css/custom.css" %}" rel="stylesheet">
+
+    <script>
+
+    </script>
 
 </head>
 
@@ -48,8 +53,8 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                     <div class="topbar-info d-flex flex-wrap">
-                        <a href="#" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>Example@gmail.com</a>
-                        <a href="#" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>+01234567890</a>
+                        <a href="{% url "contact" %}" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>ToLokota.ac.cd/a>
+                        <a href="{% url "contact" %}" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>+01234567890</a>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -65,17 +70,17 @@
         </div>
         <nav class="navbar navbar-light bg-light navbar-expand-xl">
             <a href="../index.html" class="navbar-brand ms-3">
-                <h1 class="text-primary display-5"><img src="../img/TOLOKOTA.png" width="200"></h1>
+                <h1 class="text-primary display-5"><img src="{% static "img/TOLOKOTA.png" %} "contact" %}" width="200"></h1>
             </a>
             <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars text-primary"></span>
             </button>
             <div class="collapse navbar-collapse bg-light" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a href="../index.html" class="nav-item nav-link">Accueil</a>
-                    <a href="../index.html#about" class="nav-item nav-link">A propos</a>
-                    <a href="blog.html" class="nav-item nav-link">Blog</a>
-                    <a href="#" class="nav-item nav-link active">Maps</a>
+                    <a href="{% url "home" %}" class="nav-item nav-link">Accueil</a>
+                    <a href="{% url "about" %}" class="nav-item nav-link">A propos</a>
+                    <a href="{% url "blog" %}" class="nav-item nav-link">Blog</a>
+                    <a href="" class="nav-item nav-link active">Maps</a>
                 </div>
             </div>
         </nav>
@@ -85,7 +90,7 @@
 
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb" style="
-            background-image: url('../img/img7.avif');
+            background-image: url('../../static/img/img7.avif');
             background-size: cover;
             background-position: bottom;
         ">
@@ -153,49 +158,49 @@
                     <div class="row g-2">
                         <div class="col-4">
                             <div class="footer-gallery">
-                                <img src="img/gallery-footer-1.jpg" class="img-fluid w-100" alt="">
+                                <img src="{% static "img/gallery-footer-1.jpg" %}" class="img-fluid w-100" alt="">
                                 <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-1.jpg" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    <a href="{% static "img/gallery-footer-1.jpg" %}" data-lightbox="footerGallery-1" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="footer-gallery">
-                                <img src="img/gallery-footer-2.jpg" class="img-fluid w-100" alt="">
+                                <img src="{% static "img/gallery-footer-2.jpg" %}" class="img-fluid w-100" alt="">
                                 <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-2.jpg" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    <a href="{% static "img/gallery-footer-2.jpg" %}" data-lightbox="footerGallery-2" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="footer-gallery">
-                                <img src="img/gallery-footer-3.jpg" class="img-fluid w-100" alt="">
+                                <img src="{% static "img/gallery-footer-3.jpg" %}" class="img-fluid w-100" alt="">
                                 <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-3.jpg" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    <a href="{% static "img/gallery-footer-3.jpg" %}" data-lightbox="footerGallery-3" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="footer-gallery">
-                                <img src="img/gallery-footer-4.jpg" class="img-fluid w-100" alt="">
+                                <img src="{% static "img/gallery-footer-4.jpg" %}" class="img-fluid w-100" alt="">
                                 <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-4.jpg" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    <a href="{% static "img/gallery-footer-4.jpg" %}" data-lightbox="footerGallery-4" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="footer-gallery">
-                                <img src="img/gallery-footer-5.jpg" class="img-fluid w-100" alt="">
+                                <img src="{% static "img/gallery-footer-5.jpg" %}" class="img-fluid w-100" alt="">
                                 <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-5.jpg" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    <a href="{% static "img/gallery-footer-5.jpg" %}" data-lightbox="footerGallery-5" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="footer-gallery">
-                                <img src="img/gallery-footer-6.jpg" class="img-fluid w-100" alt="">
+                                <img src="{% static "img/gallery-footer-6.jpg" %}" class="img-fluid w-100" alt="">
                                 <div class="footer-search-icon">
-                                    <a href="img/gallery-footer-6.jpg" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
+                                    <a href="{% static "img/gallery-footer-6.jpg" %}" data-lightbox="footerGallery-6" class="my-auto"><i class="fas fa-search-plus text-white"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -218,20 +223,17 @@
 <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
-<!-- JavaScript Libraries -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../lib/easing/easing.min.js"></script>
-<script src="../lib/waypoints/waypoints.min.js"></script>
-<script src="../lib/counterup/counterup.min.js"></script>
-<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="../lib/lightbox/js/lightbox.min.js"></script>
-<script src="../node_modules/moment/min/moment.min.js"></script>
-<script src="../node_modules/leaflet/dist/leaflet.js"></script>
-
-
-<!-- Template Javascript -->
-<script src="../js/main.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static "lib/easing/easing.min.js" %}"></script>
+    <script src="{% static "lib/waypoints/waypoints.min.js" %}"></script>
+    <script src="{% static "lib/counterup/counterup.min.js" %}"></script>
+    <script src="{% static "lib/owlcarousel/owl.carousel.min.js" %}"></script>
+    <script src="{% static "lib/lightbox/js/lightbox.min.js" %}"></script>
+    <script src="{% static "node_modules/moment/min/moment.min.js" %}"></script>
+    <!-- Template Javascript -->
+    <script src="{% static "js/main.js" %}"></script>
 
 <script>
 

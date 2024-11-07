@@ -4,7 +4,8 @@
     <head>
         {% load static %}
         <meta charset="utf-8">
-        <title>TOLOKOTA - ABOUT</title>
+        <link rel="icon" href="{% static 'img/sauver-la-nature.png' %}" type="image/x-icon">
+        <title>Tolokota</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -47,8 +48,8 @@
                     <div class="row align-items-center justify-content-center">
                         <div class="col-md-8">
                             <div class="topbar-info d-flex flex-wrap">
-                                <a href="#" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>Example@gmail.com</a>
-                                <a href="#" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>+01234567890</a>
+                                <a href="{% url "contact" %}" class="text-light me-4"><i class="fas fa-envelope text-white me-2"></i>Example@gmail.com</a>
+                                <a href="{% url "contact" %}" class="text-light"><i class="fas fa-phone-alt text-white me-2"></i>+01234567890</a>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -63,8 +64,8 @@
                     </div>
                 </div>
                 <nav class="navbar navbar-light bg-light navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand ms-3">
-                        <h1 class="text-primary display-5">Environs</h1>
+                    <a href="{% url "home" %}" class="navbar-brand ms-3">
+                        <h1 class="text-primary display-5">ToLokota</h1>
                     </a>
                     <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
@@ -88,7 +89,7 @@
                 <h3 class="text-white display-3 mb-4">A propos de nous</h1>
                 <p class="fs-5 text-white mb-4">Help today because tomorrow you may be the one who needs more helping!</p>
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url "home" %}">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
                     <li class="breadcrumb-item active text-white">About Us</li>
                 </ol>    

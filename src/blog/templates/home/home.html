@@ -5,7 +5,8 @@
     <head>
         {% load static %}
         <meta charset="utf-8">
-        <title>ToLokota</title>
+        <link rel="icon" href="{% static 'img/sauver-la-nature.png' %}" type="image/x-icon">
+        <title>tolokota</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -64,7 +65,7 @@
                 </div>
                 <nav class="navbar navbar-light bg-light navbar-expand-xl">
                     <a href="index.html" class="navbar-brand ms-3">
-                        <h1 class="text-primary display-5"><img src="img/TOLOKOTA.png" width="200"></h1>
+                        <h1 class="text-primary display-5"><img src="{% static 'img/TOLOKOTA.png' %}" width="200"></h1>
                     </a>
                     <button class="navbar-toggler py-2 px-3 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
