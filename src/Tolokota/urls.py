@@ -26,6 +26,6 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('email/', include('sendemail.urls')),
-    path("blog/", include('blog.urls')),
+    path("Tolokota/", include('blog.urls')),
        
 ]
