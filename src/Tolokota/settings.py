@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-auj$77*8c!!lbo8@deq&jq4oyr%gqk95^gb_%*(b4i=9@9@(cz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*"]
 #CORS_ALLOW_ALL_ORIGINS = True
 """CORS_ALLOWED_ORIGINS = [
     "https://example.com",
@@ -59,11 +59,24 @@ INSTALLED_APPS = [
     "sendemail",
 ]
 
+
+
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         'rest_framework.permissions.AllowAny',
     ]
 }
+LOGIN_REDIRECT_URL = '/home'
+
+ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_EMAIL_REQUIRED = True
+
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+ACCOUNT_SESSION_REMEMBER = True
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -74,6 +87,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
 ]
 
 ROOT_URLCONF = "Tolokota.urls"
@@ -90,6 +104,10 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                
+                
+                 # `allauth` needs this from django
+                'django.template.context_processors.request',
             ],
         },
     },

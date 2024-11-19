@@ -18,4 +18,4 @@ def login_page(request):
             else:
                 message = 'Identifiants invalides.'
     return render(
-        request, 'home/index.html', context={'form': form, 'message': message})
+        request, 'home/home.html', context={'form': form, 'message': message})
